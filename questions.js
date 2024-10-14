@@ -1,8 +1,15 @@
+
 const questions = [
     {
         id: 1,
         question: "Qual è la capitale d'Italia?",
-        answer: "Roma"
+        answers: [
+            "Roma",
+            "Milano",
+            "Napoli",
+            "Torino"
+        ],
+        correctAnswer: "Roma"
     }
 ];
 
