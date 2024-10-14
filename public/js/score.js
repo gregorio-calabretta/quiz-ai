@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         submitScore(username, score);
     });
 
+
     function calculateScore(questions) {
         let score = 0;
         questions.forEach((question, index) => {
@@ -45,3 +46,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+function startQuiz() {
+    // ... codice esistente per iniziare il quiz ...
+    {{ mostraQuiz() }}
+    // ... codice esistente per gestire il quiz ...
+    {{ mostraRisultato() }}
+    // ... codice esistente per tornare all'indice ...
+    {{ mostraTuttiIRisultati() }}
+}

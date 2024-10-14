@@ -31,6 +31,7 @@ app.post('/submit-score', (req, res) => {
 
     leaderboard.push({ name, score });
     console.log('Leaderboard updated:', leaderboard); // Debugging
+    console.log('Received score:', { name, score });
 
     res.json({ message: 'Score submitted successfully!' }); // Invia risposta JSON
 });
@@ -44,12 +45,15 @@ app.post('/quiz', (req, res) => {
 
 app.post('/result', (req, res) => {
     let score = 0;
+    const name = req.body.name; // Assicurati di passare il nome
     questions.forEach((question, index) => {
         if (req.body[`question-${index}`] === question.correctAnswer) {
             score++;
         }
     });
-    res.render('result', { score, total: questions.length });
+    // Aggiungi il punteggio alla leaderboard
+    leaderboard.push({ name, score });
+    res.redirect('/'); // Reindirizza alla pagina principale
 });
 
 /*app.listen(PORT, () => {
