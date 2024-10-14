@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
+    <script defer src="/js/refreshLeaderboard.js"></script>
     <title>Quiz App</title>
 </head>
 <body>
@@ -12,8 +13,25 @@
         <form action="/quiz" method="POST">
             <label for="name">Inserisci il tuo nome:</label>
             <input type="text" id="name" name="name" class="input-field" required> <!-- Aggiungi la classe qui -->
-            <button type="submit" class="btn">Inizia il quiz</button>
+            <button type="submit" class="btn" id="submit-button">Inizia il quiz</button>
         </form>
+
+        <div class="leaderboard">
+            <button type="submit" class="btn" id="leaderboard-button">Aggiorna leaderboard</button>
+
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list">
+                <% if (leaderboard && leaderboard.length > 0) { %>
+                    <% leaderboard.forEach((entry, index) => { %>
+                        <li><%= index + 1 %>. <%= entry.name %> - <%= entry.score %> punti</li>
+                    <% }) %>
+                <% } else { %>
+                    <li>Nessun punteggio ancora!</li>
+                <% } %>
+            </ul>
+        </div>
+        
+        
     </div>
 </body>
 </html>
