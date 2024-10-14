@@ -20,8 +20,9 @@
             <h2>Leaderboard</h2>
             <ul id="leaderboard-list">
                 <% if (leaderboard && leaderboard.length > 0) { %>
+                    <% leaderboard.sort((a, b) => b.score - a.score); %> <!-- Sort the leaderboard -->
                     <% leaderboard.forEach(entry => { %>
-                        <li><%= entry.name %> = <%= entry.score %> punti</li>
+                        <li><%= entry.name %> = <%= entry.score %> <%= entry.score === 1 ? 'punto' : 'punti' %></li>
                     <% }) %>
                 <% } else { %>
                     <li>Nessun punteggio ancora!</li>
@@ -30,4 +31,9 @@
         </div>
     </div>
 </body>
+<footer> 
+    <div>  
+    <img class="logo" src="/logo/aitho_logo.png" alt="aitho_logo">
+</div>
+</footer>
 </html>

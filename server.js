@@ -13,6 +13,8 @@ const leaderboard = [];
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'logo')));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // Aggiungi questo per supportare JSON
 
