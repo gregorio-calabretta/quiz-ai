@@ -5,6 +5,8 @@ const questions = require('./questions');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +32,10 @@ app.post('/result', (req, res) => {
     res.render('result', { score, total: questions.length });
 });
 
-app.listen(PORT, () => {
+/*app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
+});*/
+//server in ascolto su 0.0.0.0 consentendo connessioni da qualsiasi indirizzo IP
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running on http://${HOST}:${PORT}`);
 });
