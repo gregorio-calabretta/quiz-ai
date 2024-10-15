@@ -55,7 +55,7 @@ app.post('/result', (req, res) => {
     });
     // Aggiungi il punteggio alla leaderboard
     leaderboard.push({ name, score });
-    res.redirect('/'); // Reindirizza alla pagina principale
+    res.render('result', { name, score, leaderboard });
 });
 
 /*app.listen(PORT, () => {
@@ -65,3 +65,4 @@ app.post('/result', (req, res) => {
 app.listen(PORT, HOST, () => {
     console.log(`Server is running on http://${HOST}:${PORT}`);
 });
+

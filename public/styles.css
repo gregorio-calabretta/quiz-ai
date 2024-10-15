@@ -18,6 +18,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin: 0 auto; /* Centra orizzontalmente */
     box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+    position: relative; /* Aggiunto per posizionare il logo relativamente al container */
 }
 
 h1 {
@@ -88,7 +89,7 @@ label {
     color: #555; /* Colore del testo delle voci */
 }
 
-footer {
+header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +103,15 @@ footer {
     height: auto;
     display: block;
     margin: 0 auto 20px;
+}
+
+.logo, .logo-aitho {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 100px; /* Ridotto per adattarsi meglio all'angolo */
+    width: 100%;
+    height: auto;
 }
 
 @media (max-width: 480px) {
@@ -123,6 +133,12 @@ footer {
         max-width: 50%; /* Riduce ulteriormente la larghezza massima */
         width: 150px; /* Imposta una larghezza fissa più piccola per mobile */
     }
+
+    .logo, .logo-aitho {
+        max-width: 80px; /* Ridotto ulteriormente per schermi più piccoli */
+        top: 15px;
+        right: 15px;
+    }
 }
 
 /* Aggiungiamo questa regola per gestire schermi molto stretti */
@@ -136,10 +152,16 @@ footer {
         max-width: 40%; /* Riduce ancora di più per schermi molto piccoli */
         width: 120px;
     }
+
+    .logo, .logo-aitho {
+        max-width: 60px; /* Ridotto ancora per schermi molto piccoli */
+        top: 10px;
+        right: 10px;
+    }
 }
 
 /* Modifica la regola per il logo */
-footer .logo {
+header .logo {
     max-width: 80%; /* Aumenta la larghezza massima */
     width: 250px; /* Aumenta la larghezza fissa */
     height: auto;
@@ -149,22 +171,52 @@ footer .logo {
 
 @media (max-width: 480px) {
     /* Aumenta la dimensione del logo su schermi piccoli */
-    footer .logo {
+    header .logo {
         max-width: 70%; /* Aumenta la larghezza massima */
         width: 200px; /* Aumenta la larghezza fissa */
     }
 }
 
 @media (max-width: 320px) {
-    footer .logo {
+    header .logo {
         max-width: 60%; /* Aumenta la larghezza massima */
         width: 180px; /* Aumenta la larghezza fissa */
     }
 }
 
 /* Assicuriamoci che il footer non sia più largo del contenitore principale */
-footer {
+header {
     max-width: 600px; /* Stessa larghezza massima del container principale */
     margin: 20px auto 0; /* Centra il footer */
 
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.logo {
+    max-width: 100px; /* Adjust as needed */
+}
+
+.container {
+    position: relative; /* Ensure the logo is positioned relative to the container */
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.logo {
+    max-width: 100px; /* Adjust as needed */
+}
+
+.container {
+    position: relative; /* Ensure the logo is positioned relative to the container */
 }
