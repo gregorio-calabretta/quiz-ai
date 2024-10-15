@@ -1,38 +1,59 @@
-
 const questions = [
+   
     {
         id: 1,
-        question: "Qual è la capitale d'Italia?",
+        question: "Chi è il portatore dell'anello all'inizio della storia?",
         answers: [
-            "Roma",
-            "Milano",
-            "Napoli",
-            "Torino"
+            "Frodo Baggins",
+            "Gandalf",
+            "Aragorn",
+            "Legolas"
         ],
-        correctAnswer: "Roma"
+        correctAnswer: "Frodo Baggins"
     },
-    ,
     {
         id: 2,
-        question: "Qual è la capitale della Francia?",
+        question: "Qual è il nome della montagna dove l'anello deve essere distrutto?",
         answers: [
-            "Parigi",
-            "Marsiglia",
-            "Lione",
-            "Nizza"
+            "Monte Fato",
+            "Monte Bianco",
+            "Monte Verde",
+            "Monte Nero"
         ],
-        correctAnswer: "Parigi"
+        correctAnswer: "Monte Fato"
     },
     {
         id: 3,
-        question: "Qual è la capitale della Spagna?",
+        question: "Chi è il re di Gondor?",
         answers: [
-            "Madrid",
-            "Barcellona",
-            "Valencia",
-            "Siviglia"
+            "Boromir",
+            "Aragorn",
+            "Faramir",
+            "Gandalf"
         ],
-        correctAnswer: "Madrid"
+        correctAnswer: "Aragorn"
+    },
+    {
+        id: 4,
+        question: "Qual è il nome dell'elfo che aiuta Frodo e Sam?",
+        answers: [
+            "Legolas",
+            "Gimli",
+            "Elrond",
+            "Galadriel"
+        ],
+        correctAnswer: "Legolas"
+    },
+    {
+        id: 5,
+        question: "Chi tradisce Frodo e Sam durante il viaggio?",
+        answers: [
+            "Gollum",
+            "Saruman",
+            "Sauron",
+            "Boromir"
+        ],
+        correctAnswer: "Gollum"
     }
 ];
 
