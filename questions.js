@@ -1,6 +1,7 @@
 
 const questions = [
     {
+        id: 1,
         question: "Qual è la capitale d'Italia?",
         answers: [
             "Roma",
@@ -10,96 +11,111 @@ const questions = [
         ],
         correctAnswer: "Roma"
     },
+    ,
     {
-        question: "Qual è il colore del cielo?",
+        id: 2,
+        question: "Qual è la capitale della Francia?",
         answers: [
-            "Blu",
-            "Verde",
-            "Giallo",
-            "Rosso"
+            "Parigi",
+            "Marsiglia",
+            "Lione",
+            "Nizza"
         ],
-        correctAnswer: "Blu"
+        correctAnswer: "Parigi"
     },
     {
-        question: "Chi ha scritto 'La Divina Commedia'?",
+        id: 3,
+        question: "Qual è la capitale della Spagna?",
         answers: [
-            "Dante Alighieri",
-            "Giovanni Boccaccio",
-            "Petrarca",
-            "Leopardi"
+            "Madrid",
+            "Barcellona",
+            "Valencia",
+            "Siviglia"
         ],
-        correctAnswer: "Dante Alighieri"
+        correctAnswer: "Madrid"
     },
     {
-        question: "Qual è il pianeta più vicino al Sole?",
+        id: 4,
+        question: "Qual è la capitale della Germania?",
         answers: [
-            "Venere",
-            "Marte",
-            "Mercurio",
-            "Terra"
+            "Berlino",
+            "Monaco",
+            "Amburgo",
+            "Francoforte"
         ],
-        correctAnswer: "Mercurio"
+        correctAnswer: "Berlino"
     },
     {
-        question: "Chi è il fondatore di Microsoft?",
+        id: 5,
+        question: "Qual è la capitale del Regno Unito?",
         answers: [
-            "Steve Jobs",
-            "Bill Gates",
-            "Elon Musk",
-            "Mark Zuckerberg"
+            "Londra",
+            "Manchester",
+            "Birmingham",
+            "Liverpool"
         ],
-        correctAnswer: "Bill Gates"
+        correctAnswer: "Londra"
     },
     {
-        question: "Qual è il mare che bagna le coste d'Italia?",
+        id: 6,
+        question: "Qual è la capitale del Giappone?",
         answers: [
-            "Mar Mediterraneo",
-            "Mar Adriatico",
-            "Mar Ligure",
-            "Mar Tirreno"
+            "Tokyo",
+            "Osaka",
+            "Kyoto",
+            "Nagoya"
         ],
-        correctAnswer: "Mar Mediterraneo"
+        correctAnswer: "Tokyo"
     },
     {
-        question: "Qual è l'animale più veloce del mondo?",
+        id: 7,
+        question: "Qual è la capitale della Cina?",
         answers: [
-            "Ghepardo",
-            "Aquila",
-            "Cavallo",
-            "Peregrine Falcon"
+            "Pechino",
+            "Shanghai",
+            "Canton",
+            "Shenzhen"
         ],
-        correctAnswer: "Ghepardo"
+        correctAnswer: "Pechino"
     },
     {
-        question: "Qual è il simbolo chimico dell'acqua?",
+        id: 8,
+        question: "Qual è la capitale dell'Australia?",
         answers: [
-            "H2O",
-            "O2",
-            "CO2",
-            "NaCl"
+            "Canberra",
+            "Sydney",
+            "Melbourne",
+            "Brisbane"
         ],
-        correctAnswer: "H2O"
+        correctAnswer: "Canberra"
     },
     {
-        question: "Chi ha scoperto la penicillina?",
+        id: 9,
+        question: "Qual è la capitale del Canada?",
         answers: [
-            "Marie Curie",
-            "Alexander Fleming",
-            "Isaac Newton",
-            "Charles Darwin"
+            "Ottawa",
+            "Toronto",
+            "Vancouver",
+            "Montreal"
         ],
-        correctAnswer: "Alexander Fleming"
+        correctAnswer: "Ottawa"
     },
     {
-        question: "Qual è la valuta del Giappone?",
+        id: 10,
+        question: "Qual è la capitale del Brasile?",
         answers: [
-            "Yen",
-            "Won",
-            "Dollar",
-            "Euro"
+            "Brasilia",
+            "Rio de Janeiro",
+            "San Paolo",
+            "Salvador"
         ],
-        correctAnswer: "Yen"
+        correctAnswer: "Brasilia"
     }
 ];
 
 module.exports = questions;
+
+function getScore() {
+    // Logica per calcolare il punteggio basato sulle risposte
+    return score; // Restituisci il punteggio calcolato
+}

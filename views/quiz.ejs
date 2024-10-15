@@ -10,19 +10,21 @@
     <div class="container">
         <h1>Quiz per <%= name %></h1>
         <form action="/result" method="POST">
+            <input type="hidden" name="name" value="<%= name %>"> <!-- Aggiunto per passare il nome -->
             <% questions.forEach((question, index) => { %>
-                <fieldset>
-                    <legend><%= question.question %></legend>
+                <fieldset class="question-fieldset">
+                    <legend class="question-legend"><%= question.question %></legend>
                     <% question.answers.forEach(answer => { %>
-                        <label>
+                        <label class="answer-option">
                             <input type="radio" name="question-<%= index %>" value="<%= answer %>" required>
                             <%= answer %>
                         </label>
                     <% }) %>
                 </fieldset>
             <% }) %>
-            <button type="submit">Invia Risposte</button>
+            <button type="submit" id='submit-button' class="btn">Invia Risposte</button>
         </form>
+      <!--  <video id="video" src="video.mp4"></video>-->
     </div>
 </body>
 </html>

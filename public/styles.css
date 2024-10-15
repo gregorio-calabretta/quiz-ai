@@ -1,32 +1,169 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     margin: 0;
-    padding: 20px;
+    padding: 10px; /* Ridotto il padding */
+    min-height: 100vh; /* Assicura che il body occupi almeno l'intera altezza della viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container {
     max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Usa il 100% della larghezza disponibile */
+    background: #ffffff;
+    padding: 20px; /* Ridotto il padding */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; /* Centra orizzontalmente */
+    box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px; /* Dimensione del titolo */
+    color: #333; /* Colore del testo */
+    margin-bottom: 20px; /* Spazio sotto il titolo */
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
+    display: block; /* Imposta come blocco */
+    font-size: 16px; /* Dimensione del font */
+    color: #555; /* Colore del testo */
+    margin-bottom: 10px; /* Spazio sotto l'etichetta */
+    text-align: left; /* Allinea il testo a sinistra */
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10
+.input-field {
+    width: 100%; /* Larghezza al 100% */
+    padding: 12px 15px; /* Padding interno */
+    margin-bottom: 10px; /* Margine sotto l'input */
+    border: 1px solid #ddd; /* Bordo grigio chiaro */
+    border-radius: 8px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del font */
+    box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+}
+
+.input-field:focus {
+    border-color: #6a11cb; /* Colore bordo in focus */
+    outline: none; /* Rimuove il contorno di default */
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.3); /* Ombra in focus */
+}
+
+.btn {
+    background-color: #6a11cb; /* Colore di sfondo del bottone */
+    color: white; /* Colore del testo */
+    border: none; /* Rimuove il bordo */
+    padding: 12px 20px; /* Padding interno */
+    border-radius: 8px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del font */
+    cursor: pointer; /* Cambia il cursore al passaggio */
+    transition: background-color 0.3s ease; /* Transizione per il cambiamento di colore */
+    width: 100%; /* Larghezza al 100% */
+    margin-top: 10px; /* Margine sopra il bottone */
+}
+
+.btn:hover {
+    background-color: #2575fc; /* Colore di sfondo al passaggio del mouse */
+}
+
+.leaderboard {
+    margin-top: 20px; /* Spazio sopra la leaderboard */
+    text-align: left; /* Allinea il testo a sinistra */
+}
+
+.leaderboard h2 {
+    font-size: 22px; /* Dimensione del titolo della leaderboard */
+    color: #333; /* Colore del testo */
+    margin-bottom: 10px; /* Spazio sotto il titolo */
+}
+
+.leaderboard ul {
+    list-style-type: none; /* Rimuove i puntini delle liste */
+    padding: 0; /* Rimuove il padding predefinito */
+}
+
+.leaderboard li {
+    margin-bottom: 5px; /* Spazio sotto ogni voce della lista */
+    color: #555; /* Colore del testo delle voci */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Aggiungi questa regola per il logo */
+.logo-aitho {
+    max-width: 60%; /* Riduce ulteriormente la larghezza massima */
+    width: 200px; /* Imposta una larghezza fissa */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Aumentiamo leggermente la larghezza su schermi molto piccoli */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px; /* Riduzione della dimensione del titolo */
+    }
+
+    .btn {
+        padding: 10px 15px; /* Riduzione del padding del bottone */
+    }
+
+    /* Riduci ulteriormente la dimensione del logo su schermi piccoli */
+    .logo-aitho {
+        max-width: 50%; /* Riduce ulteriormente la larghezza massima */
+        width: 150px; /* Imposta una larghezza fissa più piccola per mobile */
+    }
+}
+
+/* Aggiungiamo questa regola per gestire schermi molto stretti */
+@media (max-width: 320px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .logo-aitho {
+        max-width: 40%; /* Riduce ancora di più per schermi molto piccoli */
+        width: 120px;
+    }
+}
+
+/* Modifica la regola per il logo */
+footer .logo {
+    max-width: 80%; /* Aumenta la larghezza massima */
+    width: 250px; /* Aumenta la larghezza fissa */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    /* Aumenta la dimensione del logo su schermi piccoli */
+    footer .logo {
+        max-width: 70%; /* Aumenta la larghezza massima */
+        width: 200px; /* Aumenta la larghezza fissa */
+    }
+}
+
+@media (max-width: 320px) {
+    footer .logo {
+        max-width: 60%; /* Aumenta la larghezza massima */
+        width: 180px; /* Aumenta la larghezza fissa */
+    }
+}
+
+/* Assicuriamoci che il footer non sia più largo del contenitore principale */
+footer {
+    max-width: 600px; /* Stessa larghezza massima del container principale */
+    margin: 20px auto 0; /* Cen
 }

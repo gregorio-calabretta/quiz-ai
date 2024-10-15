@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
+    <script defer src="/js/score.js"></script>
     <title>Quiz App</title>
 </head>
 <body>
@@ -11,9 +12,28 @@
         <h1>Benvenuto al Quiz!</h1>
         <form action="/quiz" method="POST">
             <label for="name">Inserisci il tuo nome:</label>
-            <input type="text" id="name" name="name" required>
-            <button type="submit">Inizia il quiz</button>
+            <input type="text" id="name" name="name" class="input-field" required>
+            <button type="submit" class="btn" id="submit-button">Inizia il quiz</button>
         </form>
+
+        <div class="leaderboard">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list">
+                <% if (leaderboard && leaderboard.length > 0) { %>
+                    <% leaderboard.sort((a, b) => b.score - a.score); %> <!-- Sort the leaderboard -->
+                    <% leaderboard.forEach(entry => { %>
+                        <li><%= entry.name %> = <%= entry.score %> <%= entry.score === 1 ? 'punto' : 'punti' %></li>
+                    <% }) %>
+                <% } else { %>
+                    <li>Nessun punteggio ancora!</li>
+                <% } %>
+            </ul>
+        </div>
     </div>
 </body>
+<footer> 
+    <div>  
+    <img class="logo" src="/logo/aitho_logo.png" alt="aitho_logo">
+</div>
+</footer>
 </html>
