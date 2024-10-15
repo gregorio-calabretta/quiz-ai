@@ -165,5 +165,6 @@ footer .logo {
 /* Assicuriamoci che il footer non sia più largo del contenitore principale */
 footer {
     max-width: 600px; /* Stessa larghezza massima del container principale */
-    margin: 20px auto 0; /* Cen
+    margin: 20px auto 0; /* Centra il footer */
+
 }
