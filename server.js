@@ -57,7 +57,10 @@ app.post('/result', (req, res) => {
     leaderboard.push({ name, score });
     res.render('result', { name, score, leaderboard });
 });
-
+// Rotta per ottenere la leaderboard
+app.get('/get-leaderboard', (req, res) => {
+    res.json({ leaderboard });
+});
 /*app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });*/

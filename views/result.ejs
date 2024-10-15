@@ -7,11 +7,8 @@
     <title>Risultati Quiz</title>
 </head>
 <body>
-    <div class="logo-container">
-        <img class="logo" src="/logo/aitho_logo.png" alt="aitho_logo">
-    </div>
-
     <div class="container">
+        <img class="logo" src="/logo/aitho_logo.png" alt="Logo Aitho">
         <h1>Risultati del Quiz</h1>
         <div class="result">
             <p>Ciao <%= name %>, hai ottenuto <%= score %> <%= score === 1 ? 'punto' : 'punti' %>!</p>
@@ -35,5 +32,33 @@
             <button type="submit" class="btn">Torna alla Home</button>
         </form>
     </div>
+
+    <script>
+        function updateLeaderboard() {
+            fetch('/get-leaderboard')
+                .then(response => response.json())
+                .then(data => {
+                    const leaderboardList = document.getElementById('leaderboard-list');
+                    leaderboardList.innerHTML = ''; // Pulisci la lista esistente
+
+                    if (data.leaderboard && data.leaderboard.length > 0) {
+                        data.leaderboard.sort((a, b) => b.score - a.score);
+                        data.leaderboard.forEach(entry => {
+                            const li = document.createElement('li');
+                            li.textContent = `${entry.name} = ${entry.score} ${entry.score === 1 ? 'punto' : 'punti'}`;
+                            leaderboardList.appendChild(li);
+                        });
+                    } else {
+                        const li = document.createElement('li');
+                        li.textContent = 'Nessun punteggio ancora!';
+                        leaderboardList.appendChild(li);
+                    }
+                })
+                .catch(error => console.error('Error fetching leaderboard:', error));
+        }
+
+        // Aggiorna la leaderboard ogni secondo
+        setInterval(updateLeaderboard, 1000);
+    </script>
 </body>
 </html>
