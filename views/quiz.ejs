@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="/logo/aitho_logo.png" alt="Logo Aitho">
+        <h1>Quiz</h1>
+        <form action="/result" method="POST">
+            <% questions.forEach((question, index) => { %>
+                <fieldset class="question-fieldset">
+                    <legend class="question-legend"><%= question.question %></legend>
+                    <% question.answers.forEach(answer => { %>
+                        <label class="answer-option">
+                            <input type="radio" name="question-<%= index %>" value="<%= answer %>" required>
+                            <%= answer %>
+                        </label>
+                    <% }) %>
+                </fieldset>
+            <% }) %>
+            <button type="submit" id='submit-button' class="btn">Invia Risposte</button>
+        </form>
+    </div>
+</body>
+</html>

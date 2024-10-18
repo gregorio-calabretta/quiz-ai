@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Risultati Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="/logo/aitho_logo.png" alt="Logo Aitho">
+        <h1>Risultati del Quiz</h1>
+        <div class="result">
+            <p>Hai ottenuto <%= score %> <%= score === 1 ? 'punto' : 'punti' %>!</p>
+        </div>
+        <form action="/" method="get">
+            <button type="submit" class="btn">Torna alla Home</button>
+        </form>
+    </div>
+</body>
+</html>

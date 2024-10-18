@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Quiz App</title>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="/logo/aitho_logo.png" alt="Logo Aitho">
+        <h1>Benvenuto al Quiz!</h1>
+        <h2>Seleziona un argomento per generare il quiz:</h2>
+        <div class="button-container">
+            <button class="topic-button" onclick="generateQuiz('Reti Neurali')">Reti Neurali</button>
+            <button class="topic-button" onclick="generateQuiz('Large Language Models (LLM)')">Large Language Models (LLM)</button>
+            <button class="topic-button" onclick="generateQuiz('Embeddings')">Embeddings</button>
+            <button class="topic-button" onclick="generateQuiz('Vettori: RAG')">Vettori: RAG</button>
+            <button class="topic-button" onclick="generateQuiz('Spring AI')">Spring AI</button>
+            <button class="topic-button" onclick="generateQuiz('LangChain4j')">LangChain4j</button>
+        </div>
+    </div>
+
+    <script>
+        function generateQuiz(topic) {
+            fetch('/generate-quiz', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ topic }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.questions) {
+                    // Reindirizza a quiz.ejs con le domande generate
+                    window.location.href = `/quiz?questions=${encodeURIComponent(JSON.stringify(data.questions))}`;
+                } else {
+                    alert('Errore nella generazione delle domande.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
